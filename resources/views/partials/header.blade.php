@@ -7,7 +7,7 @@
                 </div>
                 <ul class="m-0">
                     <li><a href="/">CHARACTERS</a> </li>
-                    <li class="{{ Route::currentRouteName() == 'comic' ? 'active' : ''}}"><a href="{{ route('comic') }}">COMICS</a> </li>
+                    <li class="{{ Route::currentRouteName() == 'comic.index' ? 'active' : ''}}"><a href="{{route('comic.index')}}">COMICS</a> </li>
                     <li><a href="/">MOVIES</a> </li>
                     <li><a href="/">TV</a> </li>
                     <li><a href="/">GAMES</a> </li>

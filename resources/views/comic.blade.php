@@ -13,7 +13,7 @@
     <div class="mb-t mt-2">
         @foreach ($comics as $key => $comic)
             <div class="card-sp-main">
-                <a class="text-white" href="/detail/{{$comic['slug']}}">
+                <a class="text-white" href="/detail/{{$key}}">
                     <div class="card-image-sp-main">
                         <img src="{{  $comic['thumb'] }}" alt="{{  $comic['series'] }}">        
                     </div>
