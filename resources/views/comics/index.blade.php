@@ -23,7 +23,8 @@
         @endforeach                        
     </div>
     <div class="btn-s">  
-        <button>LOAD MORE</button>
+        <button class="mx-2">LOAD MORE</button>
+        <a class="mx-2" href="{{route('comic.create')}}">AGGIUNGI SERIE</a>
     </div>
 </div>
 @endsection
