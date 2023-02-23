@@ -1,0 +1,268 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    all: unset;
+}
+
+// header style
+
+header {
+    .col-content {
+        margin: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .image {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        ul {
+            display: flex;
+
+            li {
+                padding: 1rem;
+
+                &.active a,
+                &:hover a {
+                    color: $primary;
+                    border-bottom: 5px solid $primary ;
+                }
+
+                a {
+                    padding-bottom: 43px;
+                    color: #000000;
+                    font-size: 10px;
+                    font-weight: 600;
+                }
+
+            }
+        }
+    }
+}
+
+// main style
+
+main {
+    background-color: #1C1C1C;
+
+    .jumbotron {
+        height: 400px;
+        background-image: url(../img/jumbotron.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top, center;
+        position: relative;
+
+        .Series {
+            color: #ffff;
+            position: absolute;
+            top: 92.8%;
+            background-color: #0282F9;
+            padding: 0.5rem 1.5rem 0.3rem;
+
+            h1 {
+                font-size: 25px
+            }
+        }
+
+        .Serie {
+            position: absolute;
+            bottom: -12%;
+        }
+    }
+
+    .bg-sp {
+        height: 70px;
+        background-color: #0282F9;
+    }
+
+    h6 {
+        width: 260px;
+        text-align: end;
+    }
+
+    .container {
+        .mb-t {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 20px 0;
+
+            .card-sp-main {
+                color: #ffff;
+                width: calc(100% / 6 - 30px);
+                margin: 20px 15px 15px 15px;
+
+                .card-image-sp-main {
+                    margin-bottom: 1rem;
+
+                    img {
+                        width: 100%;
+                        height: 175px;
+                        object-fit: cover;
+                        object-position: top;
+                    }
+                }
+            }
+        }
+
+
+        .btn-s {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffff;
+            padding-bottom: 1.5rem;
+
+            button {
+                all: unset;
+                background-color: #0282F9;
+                padding: 1rem 4rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// footer style
+footer {
+    .bg-footer-nav {
+        background-color: #0282F9;
+
+        .container-footer {
+            width: 72%;
+            margin: 0 auto;
+            padding: 20px 0;
+            display: flex;
+
+            .card-sp {
+                width: calc(100% / 5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:last-child .card-image-sp img {
+                    width: 65%;
+                }
+
+                .card-image-sp {
+                    width: 40%;
+
+                    img {
+                        width: 50%;
+                        height: 50px;
+                        object-fit: contain;
+                    }
+                }
+
+                span {
+                    width: 50%;
+                    font-size: 11px;
+                    color: #ffff;
+                }
+            }
+        }
+    }
+
+    .middle-footer {
+        background: url(../img/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+
+        .row-footer-middle {
+            display: flex;
+
+            .info {
+                margin: 2rem 2rem 4rem 0;
+
+                h3 {
+                    color: #ffffff;
+                    margin: 1rem 0;
+                }
+
+                ul {
+                    li a {
+                        color: #a8aeae;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .container {
+            background: url(../img/dc-logo-bg.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+    }
+
+    .bottom-footer {
+        background-color: #303030;
+        padding: 2rem 0;
+
+        .row-footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+                border: 2px solid #0282F9;
+                padding: 1rem;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .icons {
+                width: 33%;
+                color: #0282F9;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 17px;
+                }
+
+                .icon {
+                    img {
+                        padding-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
