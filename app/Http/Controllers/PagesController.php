@@ -15,7 +15,7 @@ class PagesController extends Controller
 
     public function show(){
         $comics = Comic::all();
-
+        
         return view('comic', compact('comics'));
     }
 }
