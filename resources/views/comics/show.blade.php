@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Comic detail')
+@section('title', 'Comic-detail')
 
 @section('content')
 <div class="jumbotron bg-danger">

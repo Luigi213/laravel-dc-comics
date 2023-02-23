@@ -15,9 +15,9 @@
             <div class="card-sp-main">
                 <a class="text-white" href="{{route('comic.show' , ['comic' => $comic])}}">
                     <div class="card-image-sp-main">
-                        <img src="{{  $comic['thumb'] }}" alt="{{  $comic['series'] }}">        
+                        <img src="{{  $comic->thumb }}" alt="{{  $comic->series }}">        
                     </div>
-                    {{ strtoupper($comic['series'])}}
+                    {{ strtoupper($comic->series)}}
                 </a>
             </div>            
         @endforeach                        
