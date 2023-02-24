@@ -84,7 +84,6 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $single = Comic::findOrFail($id);
 
         $data = $this->validation($request->all());
