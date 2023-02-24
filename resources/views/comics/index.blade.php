@@ -19,9 +19,14 @@
                     </div>
                     {{ strtoupper($comic->series)}}
                 </a>
-                <div class="edit">
-                    <a class="btn btn-warning" href="{{route('comic.edit', ['comic' =>  $comic])}}"><i class="fa-solid fa-pen-to-square"></i></a>                            
-                    <a class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>                            
+                <div class="edit d-flex">
+                    <a class="btn btn-warning mx-2" href="{{route('comic.edit', ['comic' =>  $comic])}}"><i class="fa-solid fa-pen-to-square"></i></a> 
+                    <form action="{{route('comic.destroy', ['comic' =>  $comic->id])}}" method="POST">
+                    @csrf
+
+                    @method('DELETE')
+                        <button type="sumbit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>                            
+                    </form>                           
                 </div>   
             </div>            
         @endforeach                        
