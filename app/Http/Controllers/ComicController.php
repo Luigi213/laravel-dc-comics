@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use  App\Models\Comic;
 
 class ComicController extends Controller
@@ -40,14 +41,11 @@ class ComicController extends Controller
         $data = $request->all();
 
         $newComic = new Comic();
-        $newComic->title = $data['title'];
-        $newComic->description = $data['description'];
-        $newComic->thumb = $data['thumb'];
-        $newComic->price = $data['price'];
-        $newComic->series = $data['series'];
-        $newComic->type = $data['type'];
+
+        $newComic->fill($this->validation($data));
 
         $newComic->save();
+        
         return redirect()->route('comic.index', $newComic->id);
     }
 
@@ -96,5 +94,34 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function validation($form_data){
+        $validation = Validator::make($form_data, [
+            'title' => 'required|max:60',
+            'description' => 'required|max:1000',
+            'thumb' => 'nullable|max:200',
+            'price' => 'required|max:20',
+            'series' => 'required|max:50',
+            'sale_date' => 'required',
+            'type' => 'required|max:30',
+        ],
+        [
+            'title.required' => 'Titolo obbligatorio',
+            'title.max' =>'Numero massimo di caratteri :max',
+            'description.required' => 'Descrizione obbligatorio',
+            'description.max' =>'Numero massimo di caratteri :max',
+            'thumb.max' =>'Numero massimo di caratteri :max',
+            'price.required' => 'Prezzo obbligatorio',
+            'price.max' =>'Numero massimo di caratteri :max',
+            'series.required' => 'Serie obbligatorio',
+            'series.max' =>'Numero massimo di caratteri :max',
+            'sale_date.required' => 'Data obbligatorio',
+            'sale_date.max' =>'Numero massimo di caratteri :max',
+            'type.required' => 'Tipo obbligatorio',
+            'type.max' =>'Numero massimo di caratteri :max'
+        ])->validate();
+
+        return $validation;
     }
 }
