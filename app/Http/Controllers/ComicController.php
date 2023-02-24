@@ -108,6 +108,12 @@ class ComicController extends Controller
         return redirect()->route('comic.index');
     }
     
+    /**
+     * validation the resource from storage.
+     *
+     * @param  array  $form_data
+     * @return \Illuminate\Http\Response
+     */
     public function validation($form_data){
         $validation = Validator::make($form_data, [
             'title' => 'required|max:60',
