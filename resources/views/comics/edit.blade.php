@@ -14,7 +14,7 @@
                         </ul>
                     </div>
                 @endif
-                <form action="" method="POST">
+                <form action="{{ route('comic.update', $single->id) }}" method="POST">
                     @csrf 
                     
                     @method('PUT')
@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group my-2">
                         <label for="descrizione" class="text-white fs-4 my-2">Descrizione</label>
-                        <textarea  class="form-control" type="text" name="description" id="descrizione" rows="4" placeholder="Inserisci descrizione">{{ old('description') ?? $single->description}}</textarea>
+                        <textarea  class="form-control" type="text" name="description" id="descrizione" rows="4" placeholder="Inserisci descrizione" value="{{ old('description') ?? $single->description}}">{{ old('description') ?? $single->description}}</textarea>
                         @error('description')
                             <div class="mt-2 alert alert-danger">
                                 {{ $message }}
@@ -81,7 +81,7 @@
                             </div>
                         @enderror
                     </div>
-                    <button type="sumbit" class="btn btn-primary my-3">Invia</button>
+                    <button type="sumbit" class="btn btn-success my-3">Salva</button>
                 </form>
                 <a href="{{route('comic.index')}}">Torna indietro</a>
             </div>
