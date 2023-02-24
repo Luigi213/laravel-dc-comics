@@ -116,7 +116,7 @@ class ComicController extends Controller
             'thumb' => 'nullable|max:200',
             'price' => 'required|max:20',
             'series' => 'required|max:50',
-            'sale_date' => 'required',
+            'sale_date' => 'required|date',
             'type' => 'required|max:30',
         ],
         [
@@ -130,7 +130,7 @@ class ComicController extends Controller
             'series.required' => 'Serie obbligatoria',
             'series.max' =>'Numero massimo di caratteri :max',
             'sale_date.required' => 'Data obbligatoria',
-            'sale_date.max' =>'Numero massimo di caratteri :max',
+            'sale_date.date' => 'Formato y:m:d',
             'type.required' => 'Tipo obbligatorio',
             'type.max' =>'Numero massimo di caratteri :max'
         ])->validate();
