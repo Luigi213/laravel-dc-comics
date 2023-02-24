@@ -14,11 +14,15 @@
         @foreach ($comics as $key => $comic)
             <div class="card-sp-main">
                 <a class="text-white" href="{{route('comic.show' , ['comic' => $comic])}}">
-                    <div class="card-image-sp-main">
-                        <img src="{{  $comic->thumb }}" alt="{{  $comic->series }}">        
+                    <div class="card-image-sp-main position-relative">
+                        <img src="{{  $comic->thumb }}" alt="{{  $comic->series }}">     
                     </div>
                     {{ strtoupper($comic->series)}}
                 </a>
+                <div class="edit">
+                    <a class="btn btn-warning" href="{{route('comic.edit', ['comic' =>  $comic])}}"><i class="fa-solid fa-pen-to-square"></i></a>                            
+                    <a class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>                            
+                </div>   
             </div>            
         @endforeach                        
     </div>
