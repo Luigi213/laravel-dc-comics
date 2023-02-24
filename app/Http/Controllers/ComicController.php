@@ -45,7 +45,7 @@ class ComicController extends Controller
         $newComic->fill($this->validation($data));
 
         $newComic->save();
-        
+
         return redirect()->route('comic.index', $newComic->id);
     }
 
@@ -109,14 +109,14 @@ class ComicController extends Controller
         [
             'title.required' => 'Titolo obbligatorio',
             'title.max' =>'Numero massimo di caratteri :max',
-            'description.required' => 'Descrizione obbligatorio',
+            'description.required' => 'Descrizione obbligatoria',
             'description.max' =>'Numero massimo di caratteri :max',
             'thumb.max' =>'Numero massimo di caratteri :max',
             'price.required' => 'Prezzo obbligatorio',
             'price.max' =>'Numero massimo di caratteri :max',
-            'series.required' => 'Serie obbligatorio',
+            'series.required' => 'Serie obbligatoria',
             'series.max' =>'Numero massimo di caratteri :max',
-            'sale_date.required' => 'Data obbligatorio',
+            'sale_date.required' => 'Data obbligatoria',
             'sale_date.max' =>'Numero massimo di caratteri :max',
             'type.required' => 'Tipo obbligatorio',
             'type.max' =>'Numero massimo di caratteri :max'
